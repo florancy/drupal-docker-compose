@@ -1,0 +1,21 @@
+.env
+.idea/
+.DS_Store
+
+vendor/
+web/core/
+web/modules/contrib/
+web/profiles/contrib/
+web/themes/contrib/
+
+web/sites/*/files
+web/sites/*/private
+private/*
+tmp/*
+
+# Ignore configuration files that may contain sensitive information.
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+
+# Ignore SimpleTest multi-site environment.
+/web/sites/simpletest
