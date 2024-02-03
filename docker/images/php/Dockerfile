@@ -5,6 +5,7 @@ RUN set -eux; \
     apt-get update; \
     apt-get upgrade -y; \
     apt-get install -y \
+            mariadb-client \
             zip \
             libzip-dev \
             curl \
