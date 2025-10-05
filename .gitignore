@@ -3,19 +3,24 @@
 .DS_Store
 
 vendor/
-web/core/
-web/modules/contrib/
-web/profiles/contrib/
-web/themes/contrib/
+cms/.editorconfig
+cms/.gitattributes
+cms/LICENSE.txt
+cms/README.md
+cms/recipes/
+cms/web/core/
+cms/web/modules/contrib/
+cms/web/profiles/contrib/
+cms/web/themes/contrib/
 
-web/sites/*/files
-web/sites/*/private
+cms/web/sites/*/files
+cms/web/sites/*/private
 private/*
 tmp/*
 
 # Ignore configuration files that may contain sensitive information.
-/web/sites/*/settings*.php
-/web/sites/*/services*.yml
+/cms/web/sites/*/settings*.php
+/cms/web/sites/*/services*.yml
 
 # Ignore SimpleTest multi-site environment.
-/web/sites/simpletest
+/cms/web/sites/simpletest

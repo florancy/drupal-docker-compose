@@ -1,10 +1,8 @@
-version: "3.8"
 services:
 
   php:
     build: ./docker/images/php
     container_name: '${PROJECT_NAME}_php'
-    #    working_dir: /var/www/html
     volumes:
       - ./:/var/www/html/
       - ./docker/conf/php/local.ini:/usr/local/etc/php/conf.d/local.ini
@@ -55,6 +53,21 @@ services:
       UPLOAD_LIMIT: 500M
     depends_on:
       - mariadb
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: '${PROJECT_NAME}_mailpit'
+    restart: unless-stopped
+    volumes:
+        - ./data:/data
+    ports:
+        - 8025:8025
+        - 1025:1025
+    environment:
+        MP_MAX_MESSAGES: 5000
+        MP_DATABASE: /data/mailpit.db
+        MP_SMTP_AUTH_ACCEPT_ANY: 1
+        MP_SMTP_AUTH_ALLOW_INSECURE: 1
 
 # Volumes
 volumes:
